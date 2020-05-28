@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <p>
-          You are one step closer to launching your website to GitHub!
+          You are one step closer to launching your React App to GitHub Pages!
         </p>
       </header>
     </div>
