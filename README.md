@@ -28,32 +28,29 @@ npm start
 <br /><br />
 
 🖥 Align Flight Computers 
-```bash
-git clone https://github.com/easonchai/launchpad.git
-
-cd launchpad
-
-npm install
 ```
 📑 Create a GitHub repo and change the 'homepage' attribute in package.json to:
-```"homepage": "https://&lt;username&gt;.github.io/&lt;repo-name&gt;"```
+"homepage": "https://&lt;username&gt;.github.io/&lt;repo-name&gt;"
+```
 >You should be able to find this in the root directory of the cloned repo
 <br /><br />
 
 📀 Transition to launch configuration <br />
-📦 Run:
 ```bash
+📦 Run:
 npm deploy
 ``` 
 This will automatically create a new branch in your repo named 'gh-pages'
 <br />
 
 🔥 Ignition <br />
+```
 ⚙ Setup GitHub pages source.
+```
 >Head to your repo > Settings (top right, under ☆ Star) > scroll down to GitHub Pages > Source > change to 'gh-pages'
 <br /><br />
 
-## Lift off! 🚀
+## 🚀 Lift off!
 Your site should be up and running on https://username.github.io/repo-name! Way to go!
 
 
