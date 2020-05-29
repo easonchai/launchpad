@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Launchpad",
+  "name": "A quick and easy way to bootstrap and deploy a React app to GitHub",
   "icons": [
     {
       "src": "favicon.ico",
