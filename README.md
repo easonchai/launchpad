@@ -24,7 +24,8 @@ npm install
 ```bash
 npm start
 ```
-⚛ The React App should be running on [http://localhost:3000](http://localhost:3000). Open the link to view it in the browser (or it should open automatically).
+>⚛ The React App should be running on [http://localhost:3000](http://localhost:3000). Open the link to view it in the browser (or it should open automatically).
+
 <br /><br />
 
 🖥 Align Flight Computers 
@@ -33,6 +34,7 @@ npm start
 "homepage": "https://&lt;username&gt;.github.io/&lt;repo-name&gt;"
 ```
 >You should be able to find this in the root directory of the cloned repo
+
 <br /><br />
 
 📀 Transition to launch configuration <br />
@@ -40,15 +42,15 @@ npm start
 📦 Run:
 npm deploy
 ``` 
-This will automatically create a new branch in your repo named 'gh-pages'
-<br />
+>This will automatically create a new branch in your repo named 'gh-pages'
+
+<br /> <br />
 
 🔥 Ignition <br />
 ```
 ⚙ Setup GitHub pages source.
 ```
 >Head to your repo > Settings (top right, under ☆ Star) > scroll down to GitHub Pages > Source > change to 'gh-pages'
-<br /><br />
 
 ## 🚀 Lift off!
 Your site should be up and running on https://username.github.io/repo-name! Way to go!
