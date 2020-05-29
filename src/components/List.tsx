@@ -20,7 +20,7 @@ function getStepContent(step: number) {
         case 1:
             return <Content>{`⚛ Start React app with npm start. \n It should be running on `}{<code>http://localhost:3000/</code>}</Content>
         case 2:
-            return <Content>{`📑 Create a GitHub repo and change the 'homepage' attribute in package.json to: \n`}{<code>"https://&lt;username&gt;.github.io/&lt;repo-name&gt;"</code>}</Content>
+            return <Content>{`📑 Create a GitHub repo and change the 'homepage' attribute in package.json to: \n`}{<code>"homepage": "https://&lt;username&gt;.github.io/&lt;repo-name&gt;"</code>}</Content>
         case 3:
             return <Content>{`📦 Run `}{<code>npm deploy</code>}</Content>
         case 4:
