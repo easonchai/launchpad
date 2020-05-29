@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import App from './components/App';
 import * as serviceWorker from './serviceWorker';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
@@ -15,21 +14,15 @@ const THEME = createMuiTheme({
   },
   palette: {
     primary: {
-      main: '#282c34',
-    },
-    text: {
-      primary: '#FFFFFF',
-      secondary: '#D9D9D9'
+      main: '#0083B0'
     }
   }
 });
 
 ReactDOM.render(
-  <div>
-    <MuiThemeProvider theme={THEME}>
-      <App />
-    </MuiThemeProvider>
-  </div>,
+  <MuiThemeProvider theme={THEME}>
+    <App />
+  </MuiThemeProvider>,
   document.getElementById('root')
 );
 

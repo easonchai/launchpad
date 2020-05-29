@@ -1,25 +1,25 @@
 import React from 'react';
-import { Stepper, Step, StepLabel, StepContent, Button, Paper, Typography, Container, Grid, styled } from '@material-ui/core';
-
-const MainSection = styled(Grid)({
-    background: '#282c34',
-})
+import { Stepper, Step, StepLabel, StepContent, Button, Paper, Typography, Grid } from '@material-ui/core';
 
 function getSteps() {
-    return ['Select campaign settings', 'Create an ad group', 'Create an ad'];
+    return ['Propellant Tank Fill ⛽', `Activate Orbiter's Fuel Cells ⚡`, 'Align Flight Computers 🖥',
+        'Transition to launch configuration 📀', 'Ignition 🔥', 'Lift off! 🚀'];
 }
 
 function getStepContent(step: number) {
     switch (step) {
         case 0:
-            return `Clone & run npm install`;
+            return `💾 Clone & run npm install`;
         case 1:
-            return 'Start the react app on localhost:3000 by running npm start';
+            return '⚛ Start React app with npm start. \n It should be running on http://localhost:3000/';
         case 2:
-            return `Try out different ad text to see what brings in the most customers,
-                and learn how to enhance your ads using features like ad extensions.
-                If you run into any problems with your ads, find out how to tell if
-                they're running and how to resolve approval issues.`;
+            return `📑 Open a GitHub repo and change the '' attribute to: \n "homepage: https://<username>.github.io/<repo-name>"`;
+        case 3:
+            return `📦 Run npm deploy`;
+        case 4:
+            return `⚙ Setup GitHub pages source. \n Head to your repo > Settings > scroll down to GitHub Pages > Source > 'gh-pages'`;
+        case 5:
+            return `✅ Test it out on your site!`;
         default:
             return 'Unknown step';
     }
@@ -44,14 +44,14 @@ export default function List() {
 
     return (
         <Grid container>
-            <Grid item sm={4} />
-            <Grid item xs={12} sm={4}>
-                <Stepper activeStep={activeStep} orientation="vertical" style={{ backgroundColor: '#282c34', color: 'white' }}>
+            <Grid item sm={3} />
+            <Grid item xs={12} sm={6}>
+                <Stepper activeStep={activeStep} orientation="vertical">
                     {steps.map((label, index) => (
                         <Step key={label}>
                             <StepLabel>{label}</StepLabel>
                             <StepContent>
-                                <Typography>{getStepContent(index)}</Typography>
+                                <Typography style={{ whiteSpace: 'pre-line' }}>{getStepContent(index)}</Typography>
                                 <div>
                                     <div>
                                         <Button
@@ -75,14 +75,11 @@ export default function List() {
                 </Stepper>
                 {activeStep === steps.length && (
                     <Paper square elevation={0}>
-                        <Typography>All steps completed - you&apos;re finished</Typography>
-                        <Button onClick={handleReset}>
-                            Reset
-                        </Button>
+                        <Typography>Congrats! You've completed all the steps! Time to show the world your next big idea!</Typography>
                     </Paper>
                 )}
             </Grid>
-            <Grid item sm={4} />
+            <Grid item sm={3} />
         </Grid>
     );
 }
