@@ -1,5 +1,12 @@
 import React from 'react';
-import { Stepper, Step, StepLabel, StepContent, Button, Paper, Typography, Grid, Box } from '@material-ui/core';
+import './List.css'
+import { Stepper, Step, StepLabel, StepContent, Button, Paper, Typography, Grid, Box, styled } from '@material-ui/core';
+
+const Content = styled(Typography)({
+    whiteSpace: 'pre-line',
+    fontSize: 20,
+    margin: 10
+})
 
 function getSteps() {
     return ['Propellant Tank Fill ⛽', `Activate Orbiter's Fuel Cells ⚡`, 'Align Flight Computers 🖥',
@@ -9,19 +16,19 @@ function getSteps() {
 function getStepContent(step: number) {
     switch (step) {
         case 0:
-            return `💾 Clone & run npm install`;
+            return <Content>💾 Clone & run {<code>npm install</code>}</Content>;
         case 1:
-            return '⚛ Start React app with npm start. \n It should be running on http://localhost:3000/';
+            return <Content>{`⚛ Start React app with npm start. \n It should be running on `}{<code>http://localhost:3000/</code>}</Content>
         case 2:
-            return `📑 Open a GitHub repo and change the '' attribute to: \n "homepage: https://<username>.github.io/<repo-name>"`;
+            return <Content>{`📑 Create a GitHub repo and change the 'homepage' attribute in package.json to: \n`}{<code>"https://&lt;username&gt;.github.io/&lt;repo-name&gt;"</code>}</Content>
         case 3:
-            return `📦 Run npm deploy`;
+            return <Content>{`📦 Run `}{<code>npm deploy</code>}</Content>
         case 4:
-            return `⚙ Setup GitHub pages source. \n Head to your repo > Settings > scroll down to GitHub Pages > Source > 'gh-pages'`;
+            return <Content>{`⚙ Setup GitHub pages source. \n Head to your repo > Settings > scroll down to GitHub Pages > Source > 'gh-pages'`}</Content>
         case 5:
-            return `✅ Test it out on your site!`;
+            return <Content>{`✅ Test it out on your site!`}</Content>
         default:
-            return 'Unknown step';
+            return <Content>{'Unknown step'}</Content>;
     }
 }
 
@@ -56,7 +63,7 @@ export default function List() {
                         <Step key={label}>
                             <StepLabel>{label}</StepLabel>
                             <StepContent>
-                                <Typography style={{ whiteSpace: 'pre-line', fontSize: 20, margin: 10 }}>{getStepContent(index)}</Typography>
+                                {getStepContent(index)}
                                 <div>
                                     <div>
                                         <Button
