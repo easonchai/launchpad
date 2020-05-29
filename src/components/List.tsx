@@ -1,5 +1,5 @@
 import React from 'react';
-import { Stepper, Step, StepLabel, StepContent, Button, Paper, Typography, Grid } from '@material-ui/core';
+import { Stepper, Step, StepLabel, StepContent, Button, Paper, Typography, Grid, Box } from '@material-ui/core';
 
 function getSteps() {
     return ['Propellant Tank Fill ⛽', `Activate Orbiter's Fuel Cells ⚡`, 'Align Flight Computers 🖥',
@@ -46,12 +46,17 @@ export default function List() {
         <Grid container>
             <Grid item sm={3} />
             <Grid item xs={12} sm={6}>
+                <Typography align="center" style={{ margin: 10, marginTop: 20 }}>
+                    <Box fontSize={24} fontWeight="bold">
+                        🕒 Launch Sequence
+                    </Box>
+                </Typography>
                 <Stepper activeStep={activeStep} orientation="vertical">
                     {steps.map((label, index) => (
                         <Step key={label}>
                             <StepLabel>{label}</StepLabel>
                             <StepContent>
-                                <Typography style={{ whiteSpace: 'pre-line' }}>{getStepContent(index)}</Typography>
+                                <Typography style={{ whiteSpace: 'pre-line', fontSize: 20, margin: 10 }}>{getStepContent(index)}</Typography>
                                 <div>
                                     <div>
                                         <Button

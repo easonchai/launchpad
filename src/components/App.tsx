@@ -11,7 +11,7 @@ function App() {
           <img src={logo} width="100vh" alt="logo" style={{ padding: 10 }} />
         </Box>
         <Typography component="div">
-          <Box display="flex" justifyContent="center" fontSize={20}>
+          <Box display="flex" justifyContent="center" fontSize={18}>
             You are one step closer to launching your React App to GitHub pages!
           </Box>
         </Typography>
