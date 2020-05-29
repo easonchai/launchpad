@@ -90,6 +90,12 @@ export default function List() {
                         <Typography>Congrats! You've completed all the steps! Time to show the world your next big idea!</Typography>
                     </Paper>
                 )}
+
+                <Typography align="center" style={{ margin: 10, marginTop: 20 }}>
+                    <Box fontSize={16}>
+                        {<a href="https://github.com/easonchai/launchpad" target="_blank">Click here</a>} for some more detailed explanations on each step
+                    </Box>
+                </Typography>
             </Grid>
             <Grid item sm={3} />
         </Grid>
