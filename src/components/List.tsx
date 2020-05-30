@@ -1,7 +1,6 @@
 import React from 'react';
-import fs from 'fs'
-import './List.css'
-import { homepage } from '../../package.json';
+import './List.css';
+import { homepage, deployed } from '../../package.json';
 import { Stepper, Step, StepLabel, StepContent, Button, Paper, Typography, Grid, Box, styled } from '@material-ui/core';
 
 const Content = styled(Typography)({
@@ -57,7 +56,7 @@ export default function List() {
                 homepage.includes('<') || handleNext();
                 break;
             case 3:
-                fs.existsSync('../../build');
+                deployed && handleNext();
                 break;
             case 4:
             case 5:
@@ -82,7 +81,7 @@ export default function List() {
                             <StepContent>
                                 {getStepContent(index)}
                                 {activeStep >= 3 &&
-                                    <div>
+                                    <Box>
                                         <Button
                                             disabled={activeStep !== 5}
                                             onClick={handleBack}
@@ -96,7 +95,7 @@ export default function List() {
                                         >
                                             {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
                                         </Button>
-                                    </div>
+                                    </Box>
                                 }                                
                             </StepContent>
                         </Step>
