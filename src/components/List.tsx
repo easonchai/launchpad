@@ -11,7 +11,7 @@ const Content = styled(Typography)({
 })
 
 function getSteps() {
-    return ['Propellant Tank Fill ⛽', `Activate Orbiter's Fuel Cells ⚡`, 'Align Flight Computers 🖥',
+    return ['Propellant Tank Fill ⛽', `Activate Orbiter's Fuel Cells ⚡`, 'Align Flight Computers 🖥', 'Comms. Check 🛰️',
         'Transition to launch configuration 📀', 'Ignition 🔥', 'Lift off! 🚀'];
 }
 
@@ -24,10 +24,14 @@ function getStepContent(step: number) {
         case 2:
             return <Content>{`📑 Create a GitHub repo and change the 'homepage' attribute in package.json to: \n`}{<code>"homepage": "https://&lt;username&gt;.github.io/&lt;repo-name&gt;"</code>}</Content>
         case 3:
-            return <Content>{`📦 `}{<code>npm run deploy</code>}</Content>
+            return <Content>{`📡 Ensure you have connected your working directory to GitHub by running: \n
+            git init\ngit add .\ngit commit -m "Beep Boop"\ngit remote add origin <remote repository URL>\ngit push origin master`}
+            </Content>
         case 4:
-            return <Content>{`⚙ Setup GitHub pages source. \n1. Head to your repo \n2. Settings (top right under '☆ Star')\n3. Scroll down to GitHub Pages \n4. Change Source to 'gh-pages'`}</Content>
+            return <Content>{`📦 `}{<code>npm run deploy</code>}</Content>
         case 5:
+            return <Content>{`⚙ Setup GitHub pages source. \n1. Head to your repo \n2. Settings (top right under '☆ Star')\n3. Scroll down to GitHub Pages \n4. Change Source to 'gh-pages'`}</Content>
+        case 6:
             return <Content>{`✅ Test it out on your site!`}</Content>
         default:
             return <Content>{'Unknown step'}</Content>;
@@ -56,10 +60,11 @@ export default function List() {
                 homepage.includes('<') || handleNext();
                 break;
             case 3:
+            case 4:
                 deployed && handleNext();
                 break;
-            case 4:
             case 5:
+            case 6:
                 window.location.href.includes('github') && handleNext();
                 break;
         }
@@ -80,10 +85,10 @@ export default function List() {
                             <StepLabel style={activeStep > index ? { textDecoration: 'line-through' } : { textDecoration: 'none' }}>{label}</StepLabel>
                             <StepContent>
                                 {getStepContent(index)}
-                                {activeStep >= 4 &&
+                                {activeStep >= 3 &&
                                     <Box>
                                         <Button
-                                            disabled={activeStep !== 5}
+                                            disabled={activeStep === 5}
                                             onClick={handleBack}
                                         >
                                             Back
@@ -96,7 +101,7 @@ export default function List() {
                                             {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
                                         </Button>
                                     </Box>
-                                }                                
+                                }
                             </StepContent>
                         </Step>
                     ))}
@@ -111,12 +116,12 @@ export default function List() {
                     <Box fontSize={16}>
                         📝 {<a href="https://github.com/easonchai/launchpad" target="_blank">Click here</a>} for some more detailed explanations on each step
                     </Box>
-                    <Box fontSize={16} style={{margin: 10}}>
+                    <Box fontSize={16} style={{ margin: 10 }}>
                         💬 Questions/feedback? Feel free to {
                             <a href="https://twitter.com/messages/compose?recipient_id=933716466"
-                               data-screen-name="@easonchaiii"
-                               target="_blank">DM me on Twitter</a>}!
-                        <TwitterIcon style={{marginLeft: 10, color: '#1DA1F2'}}/>
+                                data-screen-name="@easonchaiii"
+                                target="_blank">DM me on Twitter</a>}!
+                        <TwitterIcon style={{ marginLeft: 10, color: '#1DA1F2' }} />
                     </Box>
                 </Typography>
             </Grid>

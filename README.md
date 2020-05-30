@@ -37,6 +37,19 @@ npm start
 
 <br />
 
+🛰️ Comms. Check <br />
+
+```
+📡 Ensure you have connected your working directory to GitHub by running: 
+git init
+git add .
+git commit -m "Beep Boop"
+git remote add origin <remote repository URL>
+git push origin master
+```
+
+<br />
+
 📀 Transition to launch configuration <br />
 ```bash
 📦 
