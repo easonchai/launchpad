@@ -1,6 +1,7 @@
 import React from 'react';
+import fs from 'fs'
 import './List.css'
-import { homepage } from './../../package.json';
+import { homepage } from '../../package.json';
 import { Stepper, Step, StepLabel, StepContent, Button, Paper, Typography, Grid, Box, styled } from '@material-ui/core';
 
 const Content = styled(Typography)({
@@ -23,7 +24,7 @@ function getStepContent(step: number) {
         case 2:
             return <Content>{`📑 Create a GitHub repo and change the 'homepage' attribute in package.json to: \n`}{<code>"homepage": "https://&lt;username&gt;.github.io/&lt;repo-name&gt;"</code>}</Content>
         case 3:
-            return <Content>{`📦 Run `}{<code>npm deploy</code>}</Content>
+            return <Content>{`📦 `}{<code>npm run deploy</code>}</Content>
         case 4:
             return <Content>{`⚙ Setup GitHub pages source. \n1. Head to your repo \n2. Settings (top right under '☆ Star')\n3. Scroll down to GitHub Pages \n4. Change Source to 'gh-pages'`}</Content>
         case 5:
@@ -56,7 +57,7 @@ export default function List() {
                 homepage.includes('<') || handleNext();
                 break;
             case 3:
-                window.location.href.includes('localhost') && handleNext();
+                fs.existsSync('../../build');
                 break;
             case 4:
             case 5:

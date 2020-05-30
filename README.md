@@ -39,8 +39,8 @@ npm start
 
 📀 Transition to launch configuration <br />
 ```bash
-📦 Run:
-npm deploy
+📦 
+npm run deploy
 ``` 
 >This will automatically create a new branch in your repo named 'gh-pages'
 
