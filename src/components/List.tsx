@@ -52,12 +52,17 @@ export default function List() {
             case 1:
                 window.location.href.includes('localhost') && handleNext();
                 break;
+            case 2:
+                homepage.includes('<') || handleNext();
+                break;
+            case 3:
+                window.location.href.includes('localhost') && handleNext();
+                break;
+            case 4:
+            case 5:
+                window.location.href.includes('github') && handleNext();
+                break;
         }
-        if (activeStep == 1) {
-            window.location.href.includes('localhost')
-        }
-        console.log('Homepage: ' + homepage.includes('<'));
-        console.log('Site: ' + window.location.href);
     })
 
     return (
@@ -70,16 +75,15 @@ export default function List() {
                     </Box>
                 </Typography>
                 <Stepper activeStep={activeStep} orientation="vertical">
-                    {console.log(activeStep)}
                     {steps.map((label, index) => (
                         <Step key={label}>
                             <StepLabel style={activeStep > index ? { textDecoration: 'line-through' } : { textDecoration: 'none' }}>{label}</StepLabel>
                             <StepContent>
                                 {getStepContent(index)}
-                                <div>
+                                {activeStep >= 3 &&
                                     <div>
                                         <Button
-                                            disabled={activeStep === 0}
+                                            disabled={activeStep !== 5}
                                             onClick={handleBack}
                                         >
                                             Back
@@ -92,7 +96,7 @@ export default function List() {
                                             {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
                                         </Button>
                                     </div>
-                                </div>
+                                }                                
                             </StepContent>
                         </Step>
                     ))}
