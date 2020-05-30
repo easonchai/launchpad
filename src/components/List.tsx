@@ -80,7 +80,7 @@ export default function List() {
                             <StepLabel style={activeStep > index ? { textDecoration: 'line-through' } : { textDecoration: 'none' }}>{label}</StepLabel>
                             <StepContent>
                                 {getStepContent(index)}
-                                {activeStep >= 3 &&
+                                {activeStep >= 4 &&
                                     <Box>
                                         <Button
                                             disabled={activeStep !== 5}
