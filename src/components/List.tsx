@@ -2,6 +2,7 @@ import React from 'react';
 import './List.css';
 import { homepage, deployed } from '../../package.json';
 import { Stepper, Step, StepLabel, StepContent, Button, Paper, Typography, Grid, Box, styled } from '@material-ui/core';
+import TwitterIcon from '@material-ui/icons/Twitter';
 
 const Content = styled(Typography)({
     whiteSpace: 'pre-line',
@@ -35,7 +36,6 @@ function getStepContent(step: number) {
 
 
 export default function List() {
-
     const [activeStep, setActiveStep] = React.useState(1);
     const steps = getSteps();
 
@@ -109,7 +109,14 @@ export default function List() {
 
                 <Typography align="center" style={{ margin: 10, marginTop: 20 }}>
                     <Box fontSize={16}>
-                        {<a href="https://github.com/easonchai/launchpad" target="_blank">Click here</a>} for some more detailed explanations on each step
+                        📝 {<a href="https://github.com/easonchai/launchpad" target="_blank">Click here</a>} for some more detailed explanations on each step
+                    </Box>
+                    <Box fontSize={16} style={{margin: 10}}>
+                        💬 Questions/feedback? Feel free to {
+                            <a href="https://twitter.com/messages/compose?recipient_id=933716466"
+                               data-screen-name="@easonchaiii"
+                               target="_blank">DM me on Twitter</a>}!
+                        <TwitterIcon style={{marginLeft: 10, color: '#1DA1F2'}}/>
                     </Box>
                 </Typography>
             </Grid>
