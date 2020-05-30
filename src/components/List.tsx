@@ -25,7 +25,7 @@ function getStepContent(step: number) {
             return <Content>{`📑 Create a GitHub repo and change the 'homepage' attribute in package.json to: \n`}{<code>"homepage": "https://&lt;username&gt;.github.io/&lt;repo-name&gt;"</code>}</Content>
         case 3:
             return <Content>{`📡 Ensure you have connected your working directory to GitHub by running: \n
-            git remote rm origin\ngit remote add origin <remote repository URL>\ngit pull origin master --allow-unrelated-histories\ngit push origin master\n
+            git remote rm origin\ngit remote add origin <remote repository URL>\ngit push origin master\n
             The remote repository URL can be found on your repo's main page by clicking the 'Clone or download' button and usually looks like\n`}
                 {<code>https://github.com/username/repo-name.git</code>}
             </Content>
@@ -56,7 +56,7 @@ export default function List() {
     React.useEffect(() => {
         switch (activeStep) {
             case 1:
-                window.location.href.includes('localhost') && handleNext();
+                (window.location.href.includes('localhost') || window.location.href.includes('github')) && handleNext();
                 break;
             case 2:
                 homepage.includes('<') || handleNext();
