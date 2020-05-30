@@ -36,7 +36,7 @@ function getStepContent(step: number) {
 
 export default function List() {
 
-    const [activeStep, setActiveStep] = React.useState(0);
+    const [activeStep, setActiveStep] = React.useState(1);
     const steps = getSteps();
 
     const handleNext = () => {
@@ -48,6 +48,14 @@ export default function List() {
     };
 
     React.useEffect(() => {
+        switch (activeStep) {
+            case 1:
+                window.location.href.includes('localhost') && handleNext();
+                break;
+        }
+        if (activeStep == 1) {
+            window.location.href.includes('localhost')
+        }
         console.log('Homepage: ' + homepage.includes('<'));
         console.log('Site: ' + window.location.href);
     })
@@ -62,9 +70,10 @@ export default function List() {
                     </Box>
                 </Typography>
                 <Stepper activeStep={activeStep} orientation="vertical">
+                    {console.log(activeStep)}
                     {steps.map((label, index) => (
                         <Step key={label}>
-                            <StepLabel>{label}</StepLabel>
+                            <StepLabel style={activeStep > index ? { textDecoration: 'line-through' } : { textDecoration: 'none' }}>{label}</StepLabel>
                             <StepContent>
                                 {getStepContent(index)}
                                 <div>
