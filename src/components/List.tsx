@@ -1,5 +1,6 @@
 import React from 'react';
 import './List.css'
+import { homepage } from './../../package.json';
 import { Stepper, Step, StepLabel, StepContent, Button, Paper, Typography, Grid, Box, styled } from '@material-ui/core';
 
 const Content = styled(Typography)({
@@ -24,7 +25,7 @@ function getStepContent(step: number) {
         case 3:
             return <Content>{`📦 Run `}{<code>npm deploy</code>}</Content>
         case 4:
-            return <Content>{`⚙ Setup GitHub pages source. \n Head to your repo > Settings > scroll down to GitHub Pages > Source > 'gh-pages'`}</Content>
+            return <Content>{`⚙ Setup GitHub pages source. \n1. Head to your repo \n2. Settings (top right under '☆ Star')\n3. Scroll down to GitHub Pages \n4. Change Source to 'gh-pages'`}</Content>
         case 5:
             return <Content>{`✅ Test it out on your site!`}</Content>
         default:
@@ -34,6 +35,7 @@ function getStepContent(step: number) {
 
 
 export default function List() {
+
     const [activeStep, setActiveStep] = React.useState(0);
     const steps = getSteps();
 
@@ -45,9 +47,10 @@ export default function List() {
         setActiveStep((prevActiveStep) => prevActiveStep - 1);
     };
 
-    const handleReset = () => {
-        setActiveStep(0);
-    };
+    React.useEffect(() => {
+        console.log('Homepage: ' + homepage.includes('<'));
+        console.log('Site: ' + window.location.href);
+    })
 
     return (
         <Grid container>
