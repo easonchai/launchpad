@@ -25,7 +25,9 @@ function getStepContent(step: number) {
             return <Content>{`📑 Create a GitHub repo and change the 'homepage' attribute in package.json to: \n`}{<code>"homepage": "https://&lt;username&gt;.github.io/&lt;repo-name&gt;"</code>}</Content>
         case 3:
             return <Content>{`📡 Ensure you have connected your working directory to GitHub by running: \n
-            git init\ngit add .\ngit commit -m "Beep Boop"\ngit remote add origin <remote repository URL>\ngit push origin master`}
+            git init\ngit add .\ngit commit -m "Beep Boop"\ngit remote add origin <remote repository URL>\ngit push origin master\n
+            The remote repository URL can be found on your repo's main page by clicking the 'Clone or download' button and usually looks like\n`}
+                {<code>https://github.com/username/repo-name.git</code>}
             </Content>
         case 4:
             return <Content>{`📦 `}{<code>npm run deploy</code>}</Content>

@@ -47,6 +47,8 @@ git commit -m "Beep Boop"
 git remote add origin <remote repository URL>
 git push origin master
 ```
+>The remote repository URL can be found on your repo's main page by clicking the 'Clone or download' button and usually looks like
+```https://github.com/username/repo-name.git```
 
 <br />
 
