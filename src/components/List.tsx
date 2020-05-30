@@ -54,9 +54,12 @@ export default function List() {
     };
 
     React.useEffect(() => {
+        if (window.location.href.includes('github')) {
+            setActiveStep(7);
+        }
         switch (activeStep) {
             case 1:
-                (window.location.href.includes('localhost') || window.location.href.includes('github')) && handleNext();
+                window.location.href.includes('localhost') && handleNext();
                 break;
             case 2:
                 homepage.includes('<') || handleNext();
@@ -64,10 +67,6 @@ export default function List() {
             case 3:
             case 4:
                 deployed && handleNext();
-                break;
-            case 5:
-            case 6:
-                window.location.href.includes('github') && handleNext();
                 break;
         }
     })
