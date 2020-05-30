@@ -41,12 +41,9 @@ npm start
 
 ```
 📡 Ensure you have connected your working directory to GitHub by running: 
-rm -rf .git
-git init 
-git add .
-git commit -m "Beep Boop"
+git remote rm origin
 git remote add origin <remote repository URL>
-git pull origin master
+git pull origin master --allow-unrelated-histories
 git push origin master
 ```
 >The remote repository URL can be found on your repo's main page by clicking the 'Clone or download' button and usually looks like
