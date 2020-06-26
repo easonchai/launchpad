@@ -3,7 +3,9 @@ A quick and easy way to bootstrap and deploy a React app to GitHub Pages.
 
 This project uses TypeScript & [Material-UI](https://material-ui.com/getting-started/installation/) and bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 Inspired by [scaffold-eth](https://github.com/austintgriffith/scaffold-eth) by austintgriffith.
-<br />
+<br /><br />
+
+For additional info, I wrote an article [here](https://link.medium.com/GelT3mYUC7).<br />
 
 ## ⏱ Quickstart Guide
 
